@@ -48,7 +48,7 @@ h1 {
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
-    display: unset;
+  display: unset;
 }
 
 .nav-links a:hover,
