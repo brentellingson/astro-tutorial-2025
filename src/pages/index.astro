@@ -1,6 +1,7 @@
 ---
-
-import '../styles/global.css';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -12,14 +13,31 @@ import '../styles/global.css';
 		<title>Astro</title>
 	</head>
 	<body>
-		<a href="./">Home</a>
-		<a href="./about/">About</a>
+		<Header />
 		<h1>Astro Tutorial 2025</h1>
 		<ul>
-			<li>Local Url: <a href="http://localhost:4321/astro-tutorial-2025/">http://localhost:4321/astro-tutorial-2025/</a></li>
-			<li>Github Pages: <a href="https://brentellingson.github.io/astro-tutorial-2025/">https://brentellingson.github.io/astro-tutorial-2025/</a></li>
-			<li>Github Source: <a href="https://github.com/brentellingson/astro-tutorial-2025">https://github.com/brentellingson/astro-tutorial-2025</a></li>
-			<li>Tutorial: <a href="https://docs.astro.build/en/tutorial/">https://docs.astro.build/en/tutorial/</a></li>
+			<li>
+				Local Url: <a href="http://localhost:4321/astro-tutorial-2025/"
+					>http://localhost:4321/astro-tutorial-2025/</a>
+			</li>
+			<li>
+				Github Pages: <a
+					href="https://brentellingson.github.io/astro-tutorial-2025/"
+					>https://brentellingson.github.io/astro-tutorial-2025/</a>
+			</li>
+			<li>
+				Github Source: <a
+					href="https://github.com/brentellingson/astro-tutorial-2025"
+					>https://github.com/brentellingson/astro-tutorial-2025</a>
+			</li>
+			<li>
+				Tutorial: <a href="https://docs.astro.build/en/tutorial/"
+					>https://docs.astro.build/en/tutorial/</a>
+			</li>
 		</ul>
+		<Footer />
+		<script>
+			import "../scripts/menu.js"
+		</script>
 	</body>
 </html>
