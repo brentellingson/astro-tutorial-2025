@@ -1,0 +1,64 @@
+---
+
+import '../styles/global.css';
+
+const pageTitle = "About Me";
+
+const identity = {
+    firstName: "Brent",
+    country: "USA",
+    occupation: "Software Developer",
+    hobbies: ["Coding", "Reading", "Hiking"],
+    skills: [".net", "go", "Python", "Kubernetes", "Unix", "JavaScript", "TypeScript", "Astro", ],
+    happy: true,
+    finished: false,
+}
+
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "capitalize";
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
+    </head>
+    <body>
+        <a href={import.meta.env.BASE_URL}>Home</a>
+        <a href={import.meta.env.BASE_URL + "about/"}>About</a>
+        <a href={import.meta.env.BASE_URL + "blog/"}>Blog</a>
+        <h1>{pageTitle}</h1>
+        <h2>... and my new Astro site!</h2>
+
+        <p>
+            I am working through Astro's introductory tutorial. This is the
+            second page on my website, and it's the first one I built myself!
+        </p>
+        <p>
+            My name is {identity.firstName} and I am a {identity.occupation} from {identity.country}. In my free time, I enjoy {identity.hobbies.join(", ")}.
+        </p>
+        <ul>
+            {identity.skills.map((skill)=> <li class="skill">{skill}</li>)}
+        </ul>
+        { identity.happy ? <p>I am happy!</p> : <p>I am not happy.</p> }
+        { identity.finished ? <p>I have finished the tutorial!</p> : <p>I have not finished the tutorial yet.</p> }
+        <p>
+            This site will update as I complete more of the tutorial, so keep
+            checking back and see how my journey is going!
+        </p>
+    </body>
+</html>
